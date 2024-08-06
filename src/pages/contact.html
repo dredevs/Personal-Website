@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="/.public/icons/wavinghand.ico" type="image/x-icon">
+    <title>DreDevs - Contact</title>
+</head>
+<body>
+    <style>
+        body, html {
+            height: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            background-image: url('/public/icons/backgroundimg.jpg'); /* Added semicolon here */
+            background-size: cover; /* Ensures the image covers the entire page */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+    </style>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i> 
+                <i class="fas fa-moon"></i> 
+            </div>
+            <div class="status-circle" id="status-circle" title="Status"></div> <!-- Status Circle -->
+            <ul class="nav-links">
+                <li><a href="/src/pages/index.html">Home</a></li>
+                <li><a href="/src/pages/contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <ul class="social-icons">
+            <li><a href="https://github.com/dredevs" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/dredevs_" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/andresalvarez11/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="mailto:contact.dredev@gmail.com"><i class="fas fa-envelope"></i></a></li>
+        </ul>
+    </nav>
+    <div class="contact-form">
+        <h2>Contact Me</h2>
+        <form action="/submit-form" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <div class="discord-link">
+        <a href="https://discord.com/users/804660273444159518" target="_blank">
+            <i class="fab fa-discord"></i> @frostyeahh
+        </a>
+    </div>
+    <div class="github-link">
+        <a href="https://github.com/dredevs" target="_blank">
+            <i class="fab fa-github"></i> @dredevs
+        </a>
+    </div>
+    <div class="twitter-link">
+        <a href="httpps://twitter.com/dredevs_" target="_blank">
+            <i class="fab  fa-twitter"></i> @dredevs_
+        </a>
+    </div>
+
+    <script src="/src/components/theme-toggle.js"></script>
+    <script src="/src/components/discord-status.js"></script>
+</body>
+</html>

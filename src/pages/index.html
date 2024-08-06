@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="/public/icons/wavinghand.ico" type="image/x-icon">
+    <title>DreDevs</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i> 
+                <i class="fas fa-moon"></i>
+            </div>
+            <div class="status-circle" id="status-circle" title="Status"></div> <!-- Status Circle -->
+            <ul class="nav-links">
+                <li><a href="/src/pages/index.html">Home</a></li>
+                <li><a href="/src/pages/contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <ul class="social-icons">
+            <li><a href="https://github.com/dredevs" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/dredevs_" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/yourprofile/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="mailto:contact.dredev@gmail.com"><i class="fas fa-envelope"></i></a></li>
+        </ul>
+    </nav>
+    <section class="intro-text">
+        <p>Self-Taught Software Engineer based in the United States. I'm currently pursuing my</p>
+        <p>bachelor's degree in the field of Computer Science and </p>
+        <p> Electrical Engineering field.</p>
+    </section>
+    <section class="middle-text">
+        <p>I've learned numerous programming languages and have done projects</p>
+        <p>with that knowledge. I also specialize in frontend development</p>
+    </section>
+    <section class="tech-stack">
+        <ul>
+            <li><i class="fab fa-html5"></i> HTML</li>
+            <li><i class="fab fa-css3-alt"></i> CSS</li>
+            <li><i class="fab fa-js"></i> JavaScript</li>
+            <li><i class="fab fa-node-js"></i> Node.js</li>
+            <li><i class="fab fa-python"></i> Python</li>
+            <li><i class="fab fa-git"></i> Git</li>
+        </ul>
+    </section>
+    <section class="repositories">
+        <div id="repo-list"></div>
+    </section>
+
+    <script src="/src/components/github.js"></script>
+    <script src="/src/components/theme-toggle.js"></script>
+    <script src="/src/components/discord-status.js"></script> <!-- Update path as needed -->
+</body>
+</html>

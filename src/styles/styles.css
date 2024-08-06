@@ -1,0 +1,882 @@
+/* CSS Variables for Theme Colors */
+:root {
+    --background-light: white;
+    --background-dark: black;
+    --text-light: black;
+    --text-dark: white;
+    --border-light: black;
+    --border-dark: white;
+    --hover-light: gray;
+    --hover-dark: gray;
+}
+
+body, html {
+    height: 100%; 
+    background-image: url('/public/icons/backgroundimg.jpg'); /* Added semicolon here */
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    overflow: hidden;
+}
+
+
+/* Light mode styles */
+body.light-mode {
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+body.light-mode .navbar {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--border-light);
+}
+
+body.light-mode .nav-links a {
+    color: var(--text-light);
+}
+
+body.light-mode .social-icons a {
+    color: var(--text-light);
+}
+
+body.light-mode .tech-stack, 
+body.light-mode .repositories {
+    border: 1px solid var(--border-light);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+body.dark-mode .navbar {
+    background-color: #333;
+    color: var(--text-dark);
+    border: 1px solid var(--border-dark);
+}
+
+body.dark-mode .nav-links a {
+    color: var(--text-dark);
+}
+
+body.dark-mode .nav-links a:hover {
+    color: var(--hover-dark);
+}
+
+body.dark-mode .social-icons a {
+    color: var(--text-dark);
+}
+
+body.dark-mode .tech-stack {
+    border: 1px solid var(--border-dark);
+}
+
+body.dark-mode .tech-stack li {
+    background-color: #444;
+    color: var(--text-dark);
+}
+
+body.dark-mode .repositories {
+    border: 1px solid var(--border-dark);
+}
+
+body.dark-mode .repositories h2,
+body.dark-mode .repo-item h3,
+body.dark-mode .repo-item a,
+body.dark-mode .repo-stats,
+body.dark-mode .repo-stat i,
+body.dark-mode .intro-text,
+body.dark-mode .middle-text {
+    color: var(--text-dark);
+}
+
+body.dark-mode .repo-item {
+    background-color: #333;
+    border: 1px solid #444;
+}
+
+body.dark-mode .repo-item a:hover {
+    color: var(--hover-dark);
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: transparent;
+    color: var(--text-light);
+    padding: 10px 16px;
+    height: 30px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--border-light);
+    border-radius: 9px;
+}
+
+.navbar .nav-container {
+    display: flex;
+    align-items: center;
+    gap: -20px; /* Space between theme toggle and nav links */
+}
+
+/* Navigation links wrapper */
+.nav-links-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 0px; /* Move nav links further left */
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.theme-toggle i {
+    font-size: 20px;
+    color: var(--text-light);
+}
+
+.theme-toggle .fa-moon {
+    display: none;
+}
+
+body.dark-mode .theme-toggle .fa-sun {
+    display: none;
+}
+
+body.dark-mode .theme-toggle .fa-moon {
+    display: block;
+    color: var(--text-dark);
+}
+
+/* Navigation links styles */
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0; /* Remove default margin */
+}
+
+.nav-links li {
+    margin-left: -50px;
+    padding: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    color: var(--hover-light);
+}
+
+/* Social icons styles */
+.social-icons {
+    list-style: none;
+    display: flex;
+}
+
+.social-icons li {
+    margin-left: 15px;
+}
+
+.social-icons a {
+    color: var(--text-light);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: var(--hover-light);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0; /* Reset margin for mobile view */
+    }
+
+    .nav-links-wrapper {
+        margin-left: 0; /* Reset margin for mobile view */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+    }
+}
+
+
+.social-icons li {
+    margin-left: 15px;
+}
+
+.social-icons a {
+    color: var(--text-light);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: var(--hover-light);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+    }
+}
+
+.social-icons li {
+    margin-left: 15px;
+}
+
+.social-icons a {
+    color: var(--text-light);
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: var(--hover-light);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+    }
+}
+
+/* Text sections styles */
+.intro-text,
+.middle-text
+ {
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.intro-text p,
+.middle-text p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+
+/* Tech stack styles */
+.tech-stack {
+    background-color: transparent;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 5px;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.tech-stack ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tech-stack li {
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tech-stack i {
+    font-size: 20px;
+    color: var(--text-light);
+}
+
+/* Repositories styles */
+.repositories {
+    background-color: transparent;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 800px;
+    margin: 10px auto;
+}
+
+.repositories h2 {
+    font-size: 24px;
+    margin-bottom: -30px;
+    text-align: center;
+}
+
+/* Repo item styles */
+.repo-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 8px;
+    position: relative;
+    font-size: 14px;
+}
+
+.repo-item h3 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.repo-item a {
+    text-decoration: none;
+    color: var(--text-light);
+}
+
+.repo-item a:hover {
+    color: var(--hover-dark);
+}
+
+/* Repo stats styles */
+.repo-stats {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    font-size: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+.repo-stat {
+    display: flex;
+    align-items: center;
+}
+
+.repo-stat i {
+    font-size: 16px;
+    margin-right: 4px;
+}
+/* Base Contact Form Styles */
+.contact-form {
+    position: fixed; /* Position it relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 300px; /* Move 300px more to the left */
+    transform: translateY(-50%); /* Center vertically */
+    background-color: var(--background-light); /* Light background for visibility */
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    z-index: 1000; /* Ensure it appears above other content */
+    overflow: hidden;
+}
+
+/* Contact Form Heading */
+.contact-form h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: var(--text-light);
+}
+
+/* Contact Form Labels */
+.contact-form label {
+    display: block;
+    margin-top: 10px;
+    color: var(--text-light);
+}
+
+/* Contact Form Inputs and Textarea */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    margin-top: 5px;
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+/* Contact Form Button */
+.contact-form button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--text-light);
+    color: var(--background-light);
+    font-size: 16px;
+    cursor: pointer;
+}
+/* Base Contact Form Styles */
+/* Base Contact Form Styles */
+.contact-form {
+    position: fixed; /* Position it relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 21vw; /* Use viewport width for consistent positioning */
+    transform: translateY(-50%); /* Center vertically */
+    background-color: var(--background-light); /* Light background for visibility */
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 40px; /* Fixed padding for consistency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Fixed max width for consistency */
+    width: auto; /* Allow width to adjust up to max-width */
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Contact Form Heading */
+.contact-form h2 {
+    margin-top: 0;
+    font-size: 24px; /* Fixed font size for consistency */
+    color: var(--text-light);
+}
+
+/* Contact Form Labels */
+.contact-form label {
+    display: block;
+    margin-top: 15px; /* Fixed margin for consistency */
+    color: var(--text-light);
+}
+
+/* Contact Form Inputs and Textarea */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px; /* Fixed padding for consistency */
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    margin-top: 10px; /* Fixed margin for consistency */
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+/* Contact Form Button */
+.contact-form button {
+    margin-top: 15px; /* Fixed margin for consistency */
+    padding: 10px; /* Fixed padding for consistency */
+    border: none;
+    border-radius: 4px;
+    background-color: var(--text-light);
+    color: var(--background-light);
+    font-size: 16px; /* Fixed font size for consistency */
+    cursor: pointer;
+}
+
+/* Button Hover Effect */
+.contact-form button:hover {
+    background-color: var(--hover-light);
+}
+
+/* Dark Mode Contact Form */
+body.dark-mode .contact-form {
+    background-color: #333;
+    border: 1px solid var(--border-dark);
+}
+
+body.dark-mode .contact-form label,
+body.dark-mode .contact-form h2 {
+    color: var(--text-dark);
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: #444;
+    color: var(--text-dark);
+    border: 1px solid var(--border-dark);
+}
+
+body.dark-mode .contact-form button {
+    background-color: var(--text-dark);
+    color: var(--background-dark);
+}
+
+body.dark-mode .contact-form button:hover {
+    background-color: var(--hover-dark);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .contact-form {
+        left: 5vw; /* Adjust positioning for smaller screens */
+        max-width: 90vw; /* Allow form to take up more width on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form {
+        left: 2vw; /* Further adjustment for very small screens */
+        max-width: 95vw; /* Almost full width on very small screens */
+    }
+
+    .contact-form h2 {
+        font-size: 20px; /* Adjust heading font size for small screens */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 8px; /* Adjust padding for small screens */
+    }
+
+    .contact-form button {
+        font-size: 14px; /* Adjust font size for buttons on small screens */
+    }
+}
+
+/* Button Hover Effect */
+.contact-form button:hover {
+    background-color: var(--hover-light);
+}
+
+/* Dark Mode Contact Form */
+body.dark-mode .contact-form {
+    background-color: #333;
+    border: 1px solid var(--border-dark);
+}
+
+body.dark-mode .contact-form label,
+body.dark-mode .contact-form h2 {
+    color: var(--text-dark);
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: #444;
+    color: var(--text-dark);
+    border: 1px solid var(--border-dark);
+}
+
+body.dark-mode .contact-form button {
+    background-color: var(--text-dark);
+    color: var(--background-dark);
+}
+
+body.dark-mode .contact-form button:hover {
+    background-color: var(--hover-dark);
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .contact-form {
+        left: 10px; /* Move form closer to the edge on smaller screens */
+        max-width: 90%; /* Allow form to take up more width on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form {
+        left: 5px; /* Further adjustment for very small screens */
+        max-width: 95%; /* Almost full width on extremely small screens */
+    }
+
+    .contact-form h2 {
+        font-size: 18px; /* Smaller heading font size */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 6px; /* Smaller padding for small screens */
+    }
+
+    .contact-form button {
+        font-size: 14px; /* Smaller font size for buttons on small screens */
+    }
+}
+
+/* Button Hover Effect */
+.contact-form button:hover {
+    background-color: var(--hover-light);
+}
+
+/* Dark Mode Contact Form */
+body.dark-mode .contact-form {
+    background-color: #333;
+    border: 1px solid var(--border-dark);
+}
+
+body.dark-mode .contact-form label,
+body.dark-mode .contact-form h2 {
+    color: var(--text-dark);
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: #444;
+    color: var(--text-dark);
+    border: 1px solid var(--border-dark);
+}
+
+body.dark-mode .contact-form button {
+    background-color: var(--text-dark);
+    color: var(--background-dark);
+}
+
+body.dark-mode .contact-form button:hover {
+    background-color: var(--hover-dark);
+}   
+
+.contact-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; /* Start items from the left, form takes space */
+    gap: 20px; /* Space between the form and the Discord link */
+   
+}
+
+.contact-form {
+    flex: 1; /* Allows the form to take up the remaining space */
+}
+
+.discord-link {
+    width: 200px; /* Set width of the rectangle */
+    height: 100px; /* Set height of the rectangle */
+    background-color: white; /* Background color */
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    text-align: right;
+    margin-top: 90px;
+    margin-left: 650px;
+   
+}
+
+.discord-link a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.discord-link i {
+    font-size: 20px; /* Increase the icon size */
+    color: #7289DA; /* Discord logo color */
+    margin-right: 8px;
+}
+
+
+.github-link {
+    width: 200px; /* Set width of the rectangle */
+    height: 100px; /* Set height of the rectangle */
+    background-color: white; /* Background color */
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    text-align: right;
+    margin-top: 30px;
+    margin-left: 650px;
+   
+}
+
+.github-link a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.github-link i {
+    font-size: 25px; /* Increase the icon size */
+    color: black; /* Discord logo color */
+    margin-right: 8px;
+}
+
+.twitter-link {
+    width: 200px; /* Set width of the rectangle */
+    height: 100px; /* Set height of the rectangle */
+    background-color: white; /* Background color */
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    text-align: right;
+    margin-top: 30px;
+    margin-left: 650px;
+   
+}
+
+.twitter-link a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.twitter-link i {
+    font-size: 25px; /* Increase the icon size */
+    color: lightblue; /* Discord logo color */
+    margin-right: 8px;
+}
+
+/* Status Circle Container */
+.status-circle-container {
+    display: inline-block;
+    position: relative; /* For positioning tooltip */
+}
+
+/* Status Circle */
+.status-circle {
+    width: 20px; /* Slightly larger for visibility */
+    height: 20px; /* Maintain aspect ratio */
+    border-radius: 50%;
+    background-color: var(--text-light); /* Use a theme color */
+    border: 2px solid var(--border-light); /* Use theme border color */
+    margin-left: 10px; /* Adjust spacing if needed */
+    display: inline-block; /* Ensure it aligns properly with text */
+}
+
+/* Dark Mode Status Circle */
+body.dark-mode .status-circle {
+    background-color: var(--text-dark); /* Adjust for dark mode */
+    border: 2px solid var(--border-dark); /* Adjust border for dark mode */
+}
+
+/* Tooltip */
+.status-circle-container .tooltip {
+    visibility: hidden;
+    width: 80px;
+    background-color: var(--tooltip-bg); /* Background color for tooltip */
+    color: var(--tooltip-text); /* Text color for tooltip */
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the circle */
+    left: 50%;
+    margin-left: -40px; /* Center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip Arrow */
+.tooltip::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--tooltip-bg) transparent transparent transparent; /* Arrow color */
+}
+
+/* Show Tooltip on Hover */
+.status-circle-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Status Circle Hover Colors */
+.status-circle.online:hover + .tooltip {
+    background-color: #43b581; /* Green */
+}
+
+.status-circle.idle:hover + .tooltip {
+    background-color: #faa61a; /* Yellow */
+}
+
+.status-circle.dnd:hover + .tooltip {
+    background-color: #f04747; /* Red */
+}
+
+.status-circle.offline:hover + .tooltip {
+    background-color: #747f8d; /* Grey */
+}
