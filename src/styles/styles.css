@@ -12,11 +12,16 @@
 
 body, html {
     height: 100%; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
     background-image: url('/public/icons/backgroundimg.jpg'); /* Added semicolon here */
     background-size: cover; /* Ensures the image covers the entire page */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
-    overflow: hidden;
 }
 
 
@@ -368,11 +373,19 @@ body.dark-mode .theme-toggle .fa-moon {
     display: flex;
     align-items: center;
     gap: 10px;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1s forwards; /* Apply fade-in animation */
 }
 
 .tech-stack i {
     font-size: 20px;
     color: var(--text-light);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 3; /* Fade in to full opacity */
+    }
 }
 
 /* Repositories styles */
@@ -719,7 +732,7 @@ body.dark-mode .contact-form button:hover {
     align-items: right;
     justify-content: right;
     text-align: right;
-    margin-top: 90px;
+    margin-top: 100px;
     margin-left: 650px;
    
 }
@@ -813,8 +826,8 @@ body.dark-mode .contact-form button:hover {
 
 /* Status Circle */
 .status-circle {
-    width: 20px; /* Slightly larger for visibility */
-    height: 20px; /* Maintain aspect ratio */
+    width: 15px; /* Slightly larger for visibility */
+    height: 15px; /* Maintain aspect ratio */
     border-radius: 50%;
     background-color: var(--text-light); /* Use a theme color */
     border: 2px solid var(--border-light); /* Use theme border color */
@@ -880,3 +893,4 @@ body.dark-mode .status-circle {
 .status-circle.offline:hover + .tooltip {
     background-color: #747f8d; /* Grey */
 }
+
