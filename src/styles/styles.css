@@ -27,7 +27,7 @@ body {
 }
 
 body.loaded {
-    opacity: 1;
+    opacity: 1
 }
 
 
@@ -1301,16 +1301,16 @@ body.dark-mode .status-circle {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: var(--tooltip-bg) transparent transparent transparent; /* Arrow color */
+    border-color: var(--tooltip-bg) transparent transparent transparent; 
 }
 
-/* Show Tooltip on Hover */
+
 .status-circle-container:hover .tooltip {
     visibility: visible;
     opacity: 1;
 }
 
-/* Status Circle Hover Colors */
+
 .status-circle.online:hover + .tooltip {
     background-color: #43b581; /* Green */
 }
@@ -1327,3 +1327,13 @@ body.dark-mode .status-circle {
     background-color: #747f8d; /* Grey */
 }
 
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    color: #fff; 
+    font-size: 14px; 
+    text-align: left;
+    width: 100%;  
+}
