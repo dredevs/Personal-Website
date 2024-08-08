@@ -3,69 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/src/styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="/public/icons/wavinghand.ico" type="image/x-icon">
     <title>DreDevs</title>
 </head>
 <body>
-
-    <div id="react-root"></div>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="theme-toggle">
-                <i class="fas fa-sun"></i> 
-                <i class="fas fa-moon"></i>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">DreDevs</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/src/pages/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/src/pages/contact.html">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/dredevs" target="_blank"><i class="fab fa-github"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://twitter.com/dredevs_" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.linkedin.com/in/yourprofile/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:contact.dredev@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </li>
+                </ul>
             </div>
-            <div class="status-circle" id="status-circle" title="Status"></div> 
-            <ul class="nav-links">
-                <li><a href="/src/pages/index.html">Home</a></li>
-                <li><a href="/src/pages/contact.html">Contact</a></li>
-            </ul>
+            <div class="d-flex align-items-center">
+                <div class="theme-toggle me-3">
+                    <i class="fas fa-sun"></i> 
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="status-circle" id="status-circle" title="Status"></div>
+            </div>
         </div>
-        <ul class="social-icons">
-            <li><a href="https://github.com/dredevs" target="_blank"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://twitter.com/dredevs_" target="_blank"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/yourprofile/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="mailto:contact.dredev@gmail.com"><i class="fas fa-envelope"></i></a></li>
-        </ul>
     </nav>
-    <section class="intro-text">
-        <p>Self-Taught Software Engineer based in the United States. I'm currently pursuing my</p>
-        <p>bachelor's degree in the field of Computer Science and </p>
-        <p> Electrical Engineering field.</p>
-    </section>
-    <section class="middle-text">
-        <p>I've learned numerous programming languages and have done projects</p>
-        <p>with that knowledge. I also specialize in frontend development.</p>
-    </section>
-    <section class="tech-stack">
-        <ul>
-            <li><i class="fab fa-html5"></i> HTML</li>
-            <li><i class="fab fa-css3-alt"></i> CSS</li>
-            <li><i class="fab fa-js"></i> JavaScript</li>
-            <li><i class="fab fa-node-js"></i> Node.js</li>
-            <li><i class="fab fa-python"></i> Python</li>
-            <li><i class="fab fa-git"></i> Git</li>
-        </ul>
-    </section>
-    <section class="repositories">
-        <div id="repo-list"></div>
-    </section>
 
-    <footer class="footer">
+    <div class="container">
+        <section class="intro-text text-center py-4">
+            <p>Self-Taught Software Engineer based in the United States. I'm currently pursuing my</p>
+            <p>bachelor's degree in the field of Computer Science and </p>
+            <p>Electrical Engineering field.</p>
+        </section>
+
+        <section class="middle-text text-center py-4">
+            <p>I've learned numerous programming languages and have done projects</p>
+            <p>with that knowledge. I also specialize in frontend development.</p>
+        </section>
+
+        <section class="tech-stack text-center py-4">
+            <div class="row">
+                <div class="col-md-2 col-sm-4">
+                    <i class="fab fa-html5"></i> HTML
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <i class="fab fa-css3-alt"></i> CSS
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <i class="fab fa-js"></i> JavaScript
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <i class="fab fa-node-js"></i> Node.js
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <i class="fab fa-python"></i> Python
+                </div>
+                <div class="col-md-2 col-sm-4">
+                    <i class="fab fa-git"></i> Git
+                </div>
+            </div>
+        </section>
+
+        <section class="repositories py-4">
+            <div id="repo-list"></div>
+        </section>
+    </div>
+
+    <footer class="footer text-center bg-light py-3">
         <p>&copy; 2024 DreDevs. All rights reserved.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="/src/components/github.js"></script>
     <script src="/src/components/theme-toggle.js"></script>
     <script src="/src/components/discord-status.js"></script>
     <script src="/src/types/refresh.js"></script>
     <script src="/src/types/click-sound.js"></script>
-    <script src="https://unpkg.com/react/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
-    <script src="/src/types/react.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </body>
 </html>
