@@ -1,5 +1,5 @@
-const token = ''; // Replace with your GitHub token
-const username = 'dredevs'; // Replace with your GitHub username
+const token = ''; 
+const username = 'dredevs'; 
 
     fetch(`https://api.github.com/users/${username}/repos`, {
         headers: {

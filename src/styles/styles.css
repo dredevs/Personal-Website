@@ -18,10 +18,16 @@ body, html {
 }
 
 body {
-    background-image: url('/public/icons/backgroundimg.jpg'); /* Added semicolon here */
+    background-image: url('/public/icons/backgroundimg1.jpg'); /* Added semicolon here */
     background-size: cover; /* Ensures the image covers the entire page */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
 }
 
 
@@ -186,6 +192,7 @@ body.dark-mode .theme-toggle .fa-moon {
 .social-icons {
     list-style: none;
     display: flex;
+    text-decoration: none;
 }
 
 .social-icons li {
@@ -329,13 +336,14 @@ body.dark-mode .theme-toggle .fa-moon {
 
 /* Text sections styles */
 .intro-text,
-.middle-text
- {
+.middle-text {
     padding: 20px;
     text-align: center;
     font-size: 18px;
     max-width: 800px;
     margin: 20px auto;
+    opacity: 0; /* Start with invisible */
+    animation: fadeIn 1s forwards; /* Apply the fade-in animation */
 }
 
 .intro-text p,
@@ -343,8 +351,6 @@ body.dark-mode .theme-toggle .fa-moon {
     margin: 0;
     line-height: 1.5;
 }
-
-
 
 /* Tech stack styles */
 .tech-stack {
@@ -396,6 +402,8 @@ body.dark-mode .theme-toggle .fa-moon {
     padding: 10px;
     max-width: 800px;
     margin: 10px auto;
+    opacity: 0; /* Start with invisible */
+    animation: fadeIn 1s forwards; /* Apply the fade-in animation */
 }
 
 .repositories h2 {
@@ -413,6 +421,8 @@ body.dark-mode .theme-toggle .fa-moon {
     margin-bottom: 8px;
     position: relative;
     font-size: 14px;
+    opacity: 0; /* Start with invisible */
+    animation: fadeIn 1s forwards; /* Apply the fade-in animation */
 }
 
 .repo-item h3 {
@@ -452,17 +462,17 @@ body.dark-mode .theme-toggle .fa-moon {
 .contact-form {
     position: fixed; /* Position it relative to the viewport */
     top: 50%; /* Center vertically */
-    left: 300px; /* Move 300px more to the left */
-    transform: translateY(-50%); /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center both vertically and horizontally */
     background-color: var(--background-light); /* Light background for visibility */
     border: 1px solid var(--border-light);
     border-radius: 8px;
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    width: 100%;
+    max-width: 300px; /* Adjust the width as needed */
+    width: 100%; /* Allow width to adjust up to max-width */
     z-index: 1000; /* Ensure it appears above other content */
-    overflow: hidden;
+    overflow: hidden; /* Hide overflow if needed */
 }
 
 /* Contact Form Heading */
@@ -503,20 +513,20 @@ body.dark-mode .theme-toggle .fa-moon {
     cursor: pointer;
 }
 /* Base Contact Form Styles */
-/* Base Contact Form Styles */
 .contact-form {
     position: fixed; /* Position it relative to the viewport */
     top: 50%; /* Center vertically */
-    left: 21vw; /* Use viewport width for consistent positioning */
+    left: 21%; /* Adjust the horizontal position */
     transform: translateY(-50%); /* Center vertically */
     background-color: var(--background-light); /* Light background for visibility */
     border: 1px solid var(--border-light);
     border-radius: 8px;
-    padding: 40px; /* Fixed padding for consistency */
+    padding: 20px; /* Reduce padding for a smaller form */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px; /* Fixed max width for consistency */
-    width: auto; /* Allow width to adjust up to max-width */
+    max-width: 300px; /* Reduce max width for a smaller form */
+    width: 100%; /* Allow width to adjust up to max-width */
     z-index: 1000; /* Ensure it appears above other content */
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 /* Contact Form Heading */
@@ -709,113 +719,84 @@ body.dark-mode .contact-form button:hover {
     background-color: var(--hover-dark);
 }   
 
-.contact-wrapper {
+.center-wrapper {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start; /* Start items from the left, form takes space */
-    gap: 20px; /* Space between the form and the Discord link */
-   
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 100vh; /* Full height to center vertically */
+    gap: 20px; /* Space between form and social links */
+    text-decoration: none;
 }
 
 .contact-form {
-    flex: 1; /* Allows the form to take up the remaining space */
+    position: fixed; /* Position it relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center both vertically and horizontally */
+    background-color: var(--background-light); /* Light background for visibility */
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding:70px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Adjust the width as needed */
+    width: 100%; /* Allow width to adjust up to max-width */
+    z-index: 1000; /* Ensure it appears above other content */
+    overflow: hidden; /* Hide overflow if needed */
 }
 
-.discord-link {
+.no-underline {
+    text-decoration: none;
+}
+
+.social-links {
+    position: fixed; /* Position it relative to the viewport */
+    top: 50%; /* Align with the contact form vertically */
+    left: calc(27% + 300px + 20px); /* Position to the right of the contact form */
+    transform: translateY(-50%); /* Center vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between social link boxes */
+    z-index: 1000; /* Ensure it appears above other content */
+    text-decoration: none;
+}
+
+.social-link {
     width: 200px; /* Set width of the rectangle */
     height: 100px; /* Set height of the rectangle */
     background-color: white; /* Background color */
     border: 1px solid var(--border-light);
     border-radius: 8px;
-    color: white;
-    display: flex;
-    align-items: right;
-    justify-content: right;
-    text-align: right;
-    margin-top: 100px;
-    margin-left: 650px;
-   
-}
-
-.discord-link a {
-    color: black;
-    text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.social-link i {
+    font-size: 20px; /* Icon size */
+    margin-right: 8px;
+    text-decoration: none;
+}
+
+/* Adjust the position of the redirect icon if needed */
+.social-link .redirect-icon {
+    margin-left: 8px; /* Space between text and icon */
 }
 
 .discord-link i {
-    font-size: 20px; /* Increase the icon size */
     color: #7289DA; /* Discord logo color */
-    margin-right: 8px;
-}
-
-
-.github-link {
-    width: 200px; /* Set width of the rectangle */
-    height: 100px; /* Set height of the rectangle */
-    background-color: white; /* Background color */
-    border: 1px solid var(--border-light);
-    border-radius: 8px;
-    color: white;
-    display: flex;
-    align-items: right;
-    justify-content: right;
-    text-align: right;
-    margin-top: 30px;
-    margin-left: 650px;
-   
-}
-
-.github-link a {
-    color: black;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+    
 }
 
 .github-link i {
-    font-size: 25px; /* Increase the icon size */
-    color: black; /* Discord logo color */
-    margin-right: 8px;
-}
-
-.twitter-link {
-    width: 200px; /* Set width of the rectangle */
-    height: 100px; /* Set height of the rectangle */
-    background-color: white; /* Background color */
-    border: 1px solid var(--border-light);
-    border-radius: 8px;
-    color: white;
-    display: flex;
-    align-items: right;
-    justify-content: right;
-    text-align: right;
-    margin-top: 30px;
-    margin-left: 650px;
-   
-}
-
-.twitter-link a {
-    color: black;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+    color: black; /* GitHub logo color */
 }
 
 .twitter-link i {
-    font-size: 25px; /* Increase the icon size */
-    color: lightblue; /* Discord logo color */
-    margin-right: 8px;
+    color: lightblue; /* Twitter logo color */
 }
 
 /* Status Circle Container */
@@ -829,7 +810,7 @@ body.dark-mode .contact-form button:hover {
     width: 15px; /* Slightly larger for visibility */
     height: 15px; /* Maintain aspect ratio */
     border-radius: 50%;
-    background-color: var(--text-light); /* Use a theme color */
+    background-color: #43b581;
     border: 2px solid var(--border-light); /* Use theme border color */
     margin-left: 10px; /* Adjust spacing if needed */
     display: inline-block; /* Ensure it aligns properly with text */
@@ -863,7 +844,459 @@ body.dark-mode .status-circle {
 .tooltip::after {
     content: " ";
     position: absolute;
-    top: 100%; /* At the bottom of the tooltip */
+    top: 100%; /* At the bottom of the tooltip */:root {
+        --background-light: white;
+        --background-dark: black;
+        --text-light: black;
+        --text-dark: white;
+        --border-light: black;
+        --border-dark: white;
+        --hover-light: gray;
+        --hover-dark: gray;
+    }
+    
+    body, html {
+        height: 100%; 
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    body {
+        background-image: url('/public/icons/backgroundimg1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    body.loaded {
+        opacity: 1;
+    }
+    
+    body.light-mode {
+        background-color: var(--background-light);
+        color: var(--text-light);
+    }
+    
+    body.light-mode .navbar {
+        background-color: transparent;
+        color: var(--text-light);
+        border: 1px solid var(--border-light);
+    }
+    
+    body.light-mode .nav-links a {
+        color: var(--text-light);
+    }
+    
+    body.light-mode .social-icons a {
+        color: var(--text-light);
+    }
+    
+    body.light-mode .tech-stack, 
+    body.light-mode .repositories {
+        border: 1px solid var(--border-light);
+    }
+    
+    body.dark-mode {
+        background-color: var(--background-dark);
+        color: var(--text-dark);
+    }
+    
+    body.dark-mode .navbar {
+        background-color: #333;
+        color: var(--text-dark);
+        border: 1px solid var(--border-dark);
+    }
+    
+    body.dark-mode .nav-links a {
+        color: var(--text-dark);
+    }
+    
+    body.dark-mode .nav-links a:hover {
+        color: var(--hover-dark);
+    }
+    
+    body.dark-mode .social-icons a {
+        color: var(--text-dark);
+    }
+    
+    body.dark-mode .tech-stack {
+        border: 1px solid var(--border-dark);
+    }
+    
+    body.dark-mode .tech-stack li {
+        background-color: #444;
+        color: var(--text-dark);
+    }
+    
+    body.dark-mode .repositories {
+        border: 1px solid var(--border-dark);
+    }
+    
+    body.dark-mode .repositories h2,
+    body.dark-mode .repo-item h3,
+    body.dark-mode .repo-item a,
+    body.dark-mode .repo-stats,
+    body.dark-mode .repo-stat i,
+    body.dark-mode .intro-text,
+    body.dark-mode .middle-text {
+        color: var(--text-dark);
+    }
+    
+    body.dark-mode .repo-item {
+        background-color: #333;
+        border: 1px solid #444;
+    }
+    
+    body.dark-mode .repo-item a:hover {
+        color: var(--hover-dark);
+    }
+    
+    .navbar {
+        background-color: transparent;
+        color: var(--text-light);
+        padding: 10px 16px;
+        height: 30px;
+        max-width: 800px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid var(--border-light);
+        border-radius: 9px;
+    }
+    
+    .navbar .nav-container {
+        display: flex;
+        align-items: center;
+        gap: -20px;
+    }
+    
+    .nav-links-wrapper {
+        display: flex;
+        align-items: center;
+        margin-left: 0px;
+    }
+    
+    .theme-toggle {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .theme-toggle i {
+        font-size: 20px;
+        color: var(--text-light);
+    }
+    
+    .theme-toggle .fa-moon {
+        display: none;
+    }
+    
+    body.dark-mode .theme-toggle .fa-sun {
+        display: none;
+    }
+    
+    body.dark-mode .theme-toggle .fa-moon {
+        display: block;
+        color: var(--text-dark);
+    }
+    
+    .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    
+    .nav-links li {
+        margin-left: -50px;
+        padding: 30px;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text-light);
+        font-size: 18px;
+    }
+    
+    .nav-links a:hover {
+        color: var(--hover-light);
+    }
+    
+    .social-icons {
+        list-style: none;
+        display: flex;
+        text-decoration: none;
+    }
+    
+    .social-icons li {
+        margin-left: 15px;
+    }
+    
+    .social-icons a {
+        color: var(--text-light);
+        font-size: 20px;
+        text-decoration: none;
+    }
+    
+    .social-icons a:hover {
+        color: var(--hover-light);
+    }
+    
+    @media screen and (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            height: auto;
+            padding: 10px;
+        }
+    
+        .nav-container {
+            flex-direction: column;
+            align-items: center;
+            margin-left: 0;
+        }
+    
+        .nav-links-wrapper {
+            margin-left: 0;
+        }
+    
+        .nav-links {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .nav-links li {
+            margin-left: 0;
+            margin-bottom: 10px;
+        }
+    
+        .nav-links a {
+            font-size: 20px;
+        }
+    
+        .social-icons {
+            margin-top: 10px;
+        }
+    }
+    
+    .intro-text,
+    .middle-text {
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+        max-width: 800px;
+        margin: 20px auto;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+    }
+    
+    .intro-text p,
+    .middle-text p {
+        margin: 0;
+        line-height: 1.5;
+    }
+    
+    .tech-stack {
+        background-color: transparent;
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 5px;
+        max-width: 700px;
+        margin: 20px auto;
+    }
+    
+    .tech-stack ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .tech-stack li {
+        background-color: #ddd;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin: 5px;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+    }
+    
+    .tech-stack i {
+        font-size: 20px;
+        color: var(--text-light);
+    }
+    
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+    
+    .repositories {
+        background-color: transparent;
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 10px;
+        max-width: 800px;
+        margin: 10px auto;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+    }
+    
+    .repositories h2 {
+        font-size: 24px;
+        margin-bottom: -30px;
+        text-align: center;
+    }
+    
+    .repo-item {
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 8px;
+        margin-bottom: 8px;
+        position: relative;
+        font-size: 14px;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+    }
+    
+    .repo-item h3 {
+        font-size: 16px;
+        margin: 0;
+    }
+    
+    .repo-item a {
+        text-decoration: none;
+        color: var(--text-light);
+    }
+    
+    .repo-item a:hover {
+        color: var(--hover-dark);
+    }
+    
+    .repo-stats {
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
+        font-size: 12px;
+        display: flex;
+        gap: 8px;
+    }
+    
+    .repo-stat {
+        display: flex;
+        align-items: center;
+    }
+    
+    .repo-stat i {
+        font-size: 16px;
+        margin-right: 4px;
+    }
+    
+    .contact-form {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--background-light);
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        width: 100%;
+        z-index: 1000;
+        overflow: hidden;
+    }
+    
+    .contact-form h2 {
+        margin-top: 0;
+        font-size: 20px;
+        color: var(--text-light);
+    }
+    
+    .contact-form label {
+        display: block;
+        margin-top: 10px;
+        color: var(--text-light);
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid var(--border-light);
+        border-radius: 4px;
+        margin-top: 5px;
+        background-color: var(--background-light);
+        color: var(--text-light);
+    }
+    
+    .contact-form button {
+        margin-top: 10px;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: var(--text-light);
+        color: var(--background-light);
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    .contact-form {
+        position: fixed;
+        top: 50%;
+        left: 21%;
+        transform: translateY(-50%);
+        background-color: var(--background-light);
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 320px;
+        width: 100%;
+        z-index: 1000;
+        overflow: hidden;
+    }
+    
+    .contact-form img {
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .discord-link {
+        position: absolute;
+        right: -40px;
+        top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--background-light);
+        color: var(--text-light);
+        border: 1px solid var(--border-light);
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 14px;
+        text-decoration: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+    }
+    
+    .discord-link i {
+        margin-right: 5px;
+        font-size: 18px;
+    }
+    
     left: 50%;
     margin-left: -5px;
     border-width: 5px;

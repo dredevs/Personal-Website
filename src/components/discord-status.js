@@ -13,23 +13,23 @@ async function fetchDiscordData() {
             let statusText;
             switch (discord_status) {
                 case 'online':
-                    statusCircle.style.backgroundColor = '#43b581'; // Green
+                    statusCircle.style.backgroundColor = '#43b581'; 
                     statusText = 'Online';
                     break;
                 case 'idle':
-                    statusCircle.style.backgroundColor = '#faa61a'; // Yellow
+                    statusCircle.style.backgroundColor = '#faa61a'; 
                     statusText = 'Idle';
                     break;
                 case 'dnd':
-                    statusCircle.style.backgroundColor = '#f04747'; // Red
+                    statusCircle.style.backgroundColor = '#f04747'; 
                     statusText = 'Do Not Disturb';
                     break;
                 case 'offline':
-                    statusCircle.style.backgroundColor = '#747f8d'; // Grey
+                    statusCircle.style.backgroundColor = '#747f8d'; 
                     statusText = 'Offline';
                     break;
                 default:
-                    statusCircle.style.backgroundColor = '#747f8d'; // Default grey
+                    statusCircle.style.backgroundColor = '#747f8d'; 
                     statusText = 'Unknown';
                     break;
             }
@@ -40,10 +40,9 @@ async function fetchDiscordData() {
     }
 }
 
-// Fetch data when the page loads
+
 fetchDiscordData();
 
-// Optionally, use WebSocket to update in real-time
 const socket = new WebSocket(`wss://api.lanyard.rest/socket`);
 
 socket.onopen = () => {
